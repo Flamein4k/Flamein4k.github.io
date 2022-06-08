@@ -30,6 +30,13 @@
         createCannon("top", 450);
         
         
+        createCannon ("top", 150)
+        createCannon ("top", 550)
+    
+        createCannon ("right", 180)
+        
+        createCannon ("right", 380)
+        
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
     };

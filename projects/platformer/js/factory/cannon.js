@@ -78,7 +78,8 @@
             projectile.angle = angle;
             projectile.alpha = 0;
 
-            tween = game.add.tween(projectile).to(tweenTo, 2000, null, true, delay || 0, -1);
+            tween = game.add.tween(projectile).to(tweenTo, 9900
+            , null, true, delay || 0, 1);
             configureTween(tween, projectile, cannon);
             return cannon;
        

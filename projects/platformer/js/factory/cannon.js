@@ -69,16 +69,17 @@
 
 
             cannon = game.cannon.create(x, y, assetKeyCannon);
-            cannon.anchor.setTo(0.5, 0.5);
+            cannon.anchor.setTo(0.0, 0.0);
             cannon.angle = angle;
-            // cannon.scale.y = -1;
+            // cannon.scale.y = 99;
          
             projectile = game.projectile.create(cannon.x, cannon.y, assetKeyProjectile);
-            projectile.anchor.setTo(0.5, 0.5);
+            projectile.anchor.setTo(0.0, 0.0);
             projectile.angle = angle;
             projectile.alpha = 0;
+            
 
-            tween = game.add.tween(projectile).to(tweenTo, 9900
+            tween = game.add.tween(projectile).to(tweenTo, 8900
             , null, true, delay || 0, 1);
             configureTween(tween, projectile, cannon);
             return cannon;

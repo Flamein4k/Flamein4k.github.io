@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>Bouncing Box</title>
@@ -14,35 +15,38 @@
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			left: 0px;
+			/* <--- Change me! */
 		}
-		.board{
+
+		.board {
 			height: 100vh;
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 </head>
+
 <body class="board">
 	<!-- HTML for the box -->
 	<div class="box">?</div>
 
 	<script>
-		(function(){
+		(function () {
 			'use strict'
 			/* global jQuery */
 
 			//////////////////////////////////////////////////////////////////
 			/////////////////// SETUP DO NOT DELETE //////////////////////////
 			//////////////////////////////////////////////////////////////////
-			
+
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
-			
+
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
 
@@ -59,18 +63,37 @@
 			//////////////////////////////////////////////////////////////////
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
 			//////////////////////////////////////////////////////////////////
-			
-			// TODO 2 - Variable declarations 
-			
 
-			
+			// TODO 2 - Variable declarations
+			// When you first create the Variable...
+			var positionX = 0;
+			var points = 0
+			var speed = 1
+			var min = 0
+
+			var colorStr = "rgb(50, 25, 250)";
+			box.css('background-color', colorStr);
+			var randomNumberBetween0and10 = Math.random() * "255";
+
+
+
+
+
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
 			function update() {
-				
+				/* Your Code to Increase positionX by 10 HERE*/
+				moveBoxTo(positionX);
+				positionX = positionX + speed
+				if (positionX > boardWidth) {
+					speed *= -1
+				};
+				if (positionX < min) {
+					speed *= -1
+				};
 
 			};
 
@@ -80,11 +103,17 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
+				positionX = positionX
+				changeBoxText(points)
+				points = points + 1
+				speed = speed + 2
+			}
+			function getRandomColor () {
+				randomNumberBetween0and10
 				
-
-
-			};
+			}
 		})();
 	</script>
 </body>
+
 </html>

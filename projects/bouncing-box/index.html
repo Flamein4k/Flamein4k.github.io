@@ -6,9 +6,10 @@
 	<title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
 	<style>
-	body {
-		background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701286845.jpg");
-	}
+		body {
+			background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701286845.jpg");
+		}
+
 		.box {
 			width: 250px;
 			height: 330px;
@@ -53,6 +54,7 @@
 
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
+			box.on("dblclick", handledoubleClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX) {
@@ -71,11 +73,12 @@
 			// TODO 2 - Variable declarations
 			// When you first create the Variable...
 			var positionX = 0;
-			var points = 0
+			var points = "Kanye"
 			var speed = 10
 			var min = 0
+			var tempSpeed
 
-		
+
 
 
 
@@ -106,11 +109,26 @@
 			*/
 			function handleBoxClick() {
 				positionX = positionX
+				points = points + "+"
 				changeBoxText(points)
-				points = points + 1
-				speed = speed + 2
+				if (speed > 0) {
+					speed = speed + 5
+				}
+				else if (speed < 0)
+					speed = speed + 5;
+
+				// speed = speed + 2
 			}
-			
+			// This Basicly stops kanye from moving where ever the position is.
+			function handledoubleClick(){
+				if (speed >= 0) {
+					tempSpeed = 0
+				} else (tempSpeed = speed = 10)
+				
+		}
+
+
+
 		})();
 	</script>
 </body>

@@ -76,7 +76,7 @@
 			var points = "Kanye"
 			var speed = 10
 			var min = 0
-			var tempSpeed
+			var tempSpeed = speed
 
 
 
@@ -111,21 +111,24 @@
 				positionX = positionX
 				points = points + "+"
 				changeBoxText(points)
-				if (speed > 0) {
+				if (speed >= 0) {
 					speed = speed + 5
 				}
 				else if (speed < 0)
-					speed = speed + 5;
+					speed = speed - 5;
 
 				// speed = speed + 2
 			}
 			// This Basicly stops kanye from moving where ever the position is.
-			function handledoubleClick(){
-				if (speed >= 0) {
-					tempSpeed = 0
-				} else (tempSpeed = speed = 10)
-				
-		}
+			function handledoubleClick() {
+				console.log(124)
+				 if (speed === 0) {
+					speed = 10}
+				else { tempSpeed = speed
+					speed = 0 
+				}
+
+			}
 
 
 

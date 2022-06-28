@@ -22,8 +22,8 @@ var init = function (window) {
         // TODO 1 : Declare and initialize our variables 
         var circle;
         var circles = []
-
-
+         var kanye 
+var kanyes = []
         // TODO 2 : Create a function that draws a circle 
         function drawCircle() {
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
@@ -32,12 +32,20 @@ var init = function (window) {
             circles.push(circle);
         }
 
+        function drawKanye() {
+            kanye = draw.randomCircleInArea(canvas, true, true, '#999', 2);
+            physikz.addRandomVelocity(kanye, canvas, 10, 10);
+            view.addChild(kanye);
+            kanyes.push(kanye);
 
+        }
+        drawKanye()
         // TODO 3 / 7 : Call the drawCircle() function 
 
         for (var i = 0; i < 100; i++) {
             drawCircle()
         }
+     
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
